@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="내 첫번째 아이디어를 소개하는 프리미엄 웹페이지입니다.">
+    <title>내 첫번째 아이디어</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background glowing elements -->
+    <div class="bg-glow bg-glow-1" id="bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2" id="bg-glow-2"></div>
+    
+    <!-- Main Showcase Container -->
+    <main class="container" id="main-container">
+        <div class="glass-card" id="card">
+            <!-- Premium Badge -->
+            <div class="badge" id="project-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">PROJECT 01</span>
+            </div>
+            
+            <!-- Main Typography -->
+            <h1 class="main-title" id="main-title">
+                내 첫번째 아이디어
+            </h1>
+            
+            <!-- Elegant Subtitle -->
+            <p class="subtitle" id="subtitle-text">
+                가장 위대한 여정은 언제나 아주 작은 생각으로부터 시작됩니다.
+            </p>
+            
+            <!-- Interactive Action Button (to make it feel premium & alive) -->
+            <div class="action-wrapper">
+                <button class="btn-primary" id="explore-btn">
+                    <span>자세히 보기</span>
+                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer for visual completion -->
+    <footer class="footer" id="main-footer">
+        <p>&copy; 2026 My First Idea. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

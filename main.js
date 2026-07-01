@@ -62,6 +62,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 3. Sentence & Button Color Switcher
+    const changeTextBtn = document.getElementById('change-text-btn');
+    const mainTitle = document.getElementById('main-title');
+
+    const sentences = [
+        '오늘도 힘내세요!',
+        '이대로 계속 가봅시다.',
+        '오늘도 해냈어요!',
+        '조금씩 나아지고 있어요.'
+    ];
+
+    const buttonThemes = [
+        { bg: 'linear-gradient(135deg, #6366f1 0%, #4f46e5 100%)', rgb: '79, 70, 229' },   // Indigo
+        { bg: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', rgb: '5, 150, 105' },   // Emerald
+        { bg: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', rgb: '217, 119, 6' },    // Amber
+        { bg: 'linear-gradient(135deg, #ec4899 0%, #be185d 100%)', rgb: '190, 24, 93' }    // Pink
+    ];
+
+    let currentIndex = 0;
+
+    if (changeTextBtn && mainTitle) {
+        changeTextBtn.addEventListener('click', () => {
+            // Button Click Micro-interaction
+            changeTextBtn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                changeTextBtn.style.transform = 'none';
+            }, 100);
+
+            // Update Index
+            currentIndex = (currentIndex + 1) % sentences.length;
+            const newSentence = sentences[currentIndex];
+            const newTheme = buttonThemes[currentIndex];
+
+            // Smooth Text Fade Out-In Animation
+            mainTitle.style.opacity = '0';
+            mainTitle.style.transform = 'translateY(10px)';
+            mainTitle.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+
+            setTimeout(() => {
+                mainTitle.textContent = newSentence;
+                mainTitle.style.opacity = '1';
+                mainTitle.style.transform = 'translateY(0)';
+            }, 300);
+
+            // Dynamically apply color variables with smooth transition
+            changeTextBtn.style.setProperty('--btn-sec-bg', newTheme.bg);
+            changeTextBtn.style.setProperty('--btn-sec-shadow', `rgba(${newTheme.rgb}, 0.3)`);
+            changeTextBtn.style.setProperty('--btn-sec-shadow-hover', `rgba(${newTheme.rgb}, 0.45)`);
+        });
+    }
+
     // Toast message function
     function showToast(message) {
         // Remove existing toast if any
